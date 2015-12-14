@@ -128,7 +128,10 @@ public class Responder
                     new FileReader(FILE_OF_DEFAULT_RESPONSES));
             String response = reader.readLine();
             while(response != null) {
-                defaultResponses.add(response);
+                if(!response.trim().isEmpty()){
+                    defaultResponses.add(response);
+                    System.out.println(response);
+                }
                 response = reader.readLine();
             }
             reader.close();
